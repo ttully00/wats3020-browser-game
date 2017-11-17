@@ -27,7 +27,7 @@ class TicTacToe {
 
     this.moveCount = 0;
 
-    this.start.Prompt = document.querySelector('#start-prompt');
+    this.startPrompt = document.querySelector('#start-prompt');
 
     this.movePrompt = document.querySelector('#move-prompt');
 
@@ -157,7 +157,7 @@ class TicTacToe {
       this.currentPlayer = this.player1;
     }
 
-    this.currentPlayerToken.setAttribute('class', 'glyphicon glyphicon-${this.currentPlayer.token}');
+    this.currentPlayerToken.setAttribute('class', `glyphicon glyphicon-${this.currentPlayer.token}`);
   }
   setUpTileListeners() {
     console.log('Setting up Tile Listeners.');
@@ -232,7 +232,7 @@ class TicTacToe {
 
     this.currentPlayer = this.player1;
 
-    this.currentPlayerToken.setAttribute('class', 'glyphicon glyphicon-${this.currentPlayer.token}');
+    this.currentPlayerToken.setAttribute('class', `glyphicon glyphicon-${this.currentPlayer.token}`);
 
   }
 
@@ -256,15 +256,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   console.log('DOM Content has loaded');
 
-  let startButton = document.querySelector('#start-Button');
+  let startButton = document.querySelector('#start-button');
+  startButton.addEventListener('click', function(event) {
 
 
 
+    game = new TicTacToe();
 
-  game = new TicTacToe();
-
-  game.start();
-
+    game.start();
+  });
 
 }); // End of the "DOMContentLoaded" event listener here.
 
